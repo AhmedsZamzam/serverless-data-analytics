@@ -151,8 +151,6 @@ Now, on the Amazon QuickSight dashboard, navigate to User Settings page on the T
 
 ![image](https://s3.amazonaws.com/us-east-1.data-analytics/labcontent/reinvent2017content-abd313/lab2/qsimage6.PNG)
 
-<p align="center"><img src="img/updated2.png" /></p> 
-
 12. When you are done doing all this, click **Update** to bring you back to the user settings back.
 
 ## Configuring Amazon QuickSight to use Amazon Athena as data source
@@ -229,8 +227,8 @@ You can also use the slider on the X-axis to select the range of values to appea
 
 ### Visualize Month over Month Quantity
 
-1. Add a new visual by duplicating the previous visual from the visual menu.
-2. Select KPI as the Visual Type (bottom left of the screen).
+1. Add a new visual by duplicating the previous visual. Click on visual top right arrow and select **Duplicate visual**.
+2. Select **KPI** as the Visual Type (bottom left of the screen).
 3. In the field wells, click arrow in **Date** column to change the aggregation level to Month or as needed.
 
 ![image](img/kpi.png)

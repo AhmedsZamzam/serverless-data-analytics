@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ed070cbd-e6a5-405e-af68-0209fb7efda1" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Lab2/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/Lab2/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab2/img/athena-table.png" beforeDir="false" afterPath="$PROJECT_DIR$/Lab2/img/athena-table.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab2/img/oregon.png" beforeDir="false" afterPath="$PROJECT_DIR$/Lab2/img/oregon.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Lab2/img/prepare-forecast.png" beforeDir="false" afterPath="$PROJECT_DIR$/Lab2/img/prepare-forecast.png" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -20,8 +16,8 @@
         <entry file="file://$PROJECT_DIR$/Lab2/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="439">
-                <caret line="248" lean-forward="true" selection-start-line="248" selection-end-line="248" />
+              <first_editor relative-caret-position="117">
+                <caret line="152" lean-forward="true" selection-start-line="152" selection-end-line="152" />
               </first_editor>
               <second_editor />
             </state>
@@ -103,7 +99,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1582560748526" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1582561048627" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunDashboard">
@@ -189,8 +185,8 @@
     <entry file="file://$PROJECT_DIR$/Lab2/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="439">
-            <caret line="248" lean-forward="true" selection-start-line="248" selection-end-line="248" />
+          <first_editor relative-caret-position="117">
+            <caret line="152" lean-forward="true" selection-start-line="152" selection-end-line="152" />
           </first_editor>
           <second_editor />
         </state>
