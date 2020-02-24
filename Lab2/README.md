@@ -151,19 +151,17 @@ Now, on the Amazon QuickSight dashboard, navigate to User Settings page on the T
 
 ![image](https://s3.amazonaws.com/us-east-1.data-analytics/labcontent/reinvent2017content-abd313/lab2/qsimage6.PNG)
 
-11. Now, select the **S3 Buckets you can access across AWS** tab on the top right. Make sure **Use a different bucket** is selected. Insert _us-west-2.serverless-analytics_ as the bucket name and select **Add S3 bucket**. It should look similar to below:
-
 <p align="center"><img src="img/updated2.png" /></p> 
 
 12. When you are done doing all this, click **Update** to bring you back to the user settings back.
 
 ## Configuring Amazon QuickSight to use Amazon Athena as data source
 
-> For this lab, you will need to choose the **US West (Oregon)** region. 
+> For this lab, you will need to choose the region where your data resides. 
 
 ![image](img/oregon.png)
 
-1. Click on the region icon on the top-right corner of the page, and select **US West (Oregon)**. 
+1. Click on the region icon on the top-right corner of the page, and select the region where your data resides. 
 
 2. Click on **Manage data** on the top-right corner of the webpage to review existing data sets.
 
@@ -180,142 +178,44 @@ Now, on the Amazon QuickSight dashboard, navigate to User Settings page on the T
 ![image](img/athena-ds.png)
 
 6. Click **Create data source**.
-7. Select the **mydatabase** database.
+7. Select your created Athena database.
 
 ![image](img/athena-table.png)
 
-8. Choose the **nytaxirides** table.
-9. Choose **Edit/Preview** data.
+8. Choose the table you need to visualize its data.
 
-> This is a crucial step. Please ensure you choose **Edit/Preview** data.
-
-10. Under **Fields** on the left column, choose **Add calculate field**
-
-    i. Select the **extract** operation from Function list.
-
-    ii. Select **pickup_datetime** from the **Field list**.
-
-    iii. For **Calculated field name**, type **hourofday**.
-
-    iv. Type ‘HH’ so the Formula is **extract('HH',{pickup_datetime})**
-
-    v. Choose **Create** to add a field which is calculated from an existing field. In this case, the **hourofday** field is calculated from the **pickup_datetime field** based on the specified formula.
-
-    ![image](https://s3.amazonaws.com/us-east-1.data-analytics/labcontent/reinvent2017content-abd313/lab2/qsimage13.PNG)
-
-11. Choose **Save and Visualize** on top of the page.
+9. Choose **Save and Visualize** on top of the page.
 
 ## Visualizing the data using Amazon QuickSight
 
-Now that you have configured the data source and created a new field to represent the hour of the day, in this section you will filter the data by year followed by month to visualize the taxi data for the entire month of January 2016 based on the **pickup_datetime** field.
+Before you start building dashboard graphs with QuickSight, pick two - three columns from your
+data set that meet the following criteria:
+1. The first column is a date column (can be year, month or day. Usually marked by **calendar icon**
+in **Fields list** on the left)
+2. The second column is a quantifiable number (revenue, count, distance, etc. Usually
+marked by a **green hash #**)
+3. The third column has categorical value, which means it has specific limited set of values (type,
+category, etc. Usually marked by **ticket icon**)
 
-### Add year based filter to visualize the dataset for the year 2016
+Now that you have configured the data source and picked your columns to work with, we will
+start by forecasting values in future dates based on your sample data.
 
-1. Ensure that current AWS region is **US West (Oregon)** region.
+### Forecast Monthly Trend for your Quantity Column
 
-2. Under the **Fields List**, select the **year** field to show the distribution of fares per year.
-
-![image](https://s3.amazonaws.com/us-east-1.data-analytics/labcontent/reinvent2017content-abd313/lab2/qsimage14.PNG)
-
-3. To reformat the **year** without comma
-
-   i. Select the dropdown arrow for the **year** field.
-
-   ii. Select **Format 1,234.5678** from the dropdown menu.
-
-   iii. Select **1235**.
-
-4. To add a filter on the **year** field, 
-
-   i. Select the dropdown for **year** field from the **Fields list**.
-
-   ii. Select **Add filter to the field** from the dropdown menu.
-
-   ![image](https://s3.amazonaws.com/us-east-1.data-analytics/labcontent/reinvent2017content-abd313/lab2/qsimage15.PNG)
-
-5. To filter the data only for the year 2016
-
-   i. Choose the new filter that you just created by clicking on **#** next to filter name **year** under the **Edit filter** menu.
-  
-   ii. Select **Filter list** for the two dropdowns under the filter name.
-  
-   iii. Deselect **Select All**.
-  
-   iv. Select only **2016**.
-  
-   v. Click **Apply**.
-  
-   vi. Click **Close**.
-
-![image](img/year-filter.png)
-
-### Add the month based filter for the month of January
-
-1. Ensure that current AWS region is **US West(Oregon)** region.
-2. Select **Visualize** from the navigation menu in the left-hand corner.
-3. Under the **Fields list**, deselect **year** by clicking on **year** field name.
-4. Select **month** by clicking on the **month** field name from the **Fields list**.
-
-5. To filter the data set for the month of January (Month 1)
-
-   i. Select the dropdown arrow for **month** field under the **Fields List**.
-
-   ii. Select **Add filter to the field**.
-
-   ![image](https://s3.amazonaws.com/us-east-1.data-analytics/labcontent/reinvent2017content-abd313/lab2/qsimage17.PNG)
-
-6. To filter the data for month of January 2016 (Month 1),
-
-   i. Choose the new filter that you just created by clicking on **#** next to filter name **month** under the **Edit Filter** menu.
- 
-   ii. Select **Filter list** for the two dropdowns under the filter name.
- 
-   iii. Deselect **ALL**.
- 
-   iv. Select only **1**.
- 
-   v. Click **Apply**
- 
-   vi. Click **Close**.
-
-![image](img/month-filter.png)
-
-### Visualize the data by hour of day for the month of January 2016
-
-1. Select **Visualize** from the navigation menu in the left-hand corner.
-2. Under the **Fields list**, deselect **month** by clicking on **month** field name.
-3. Select **hourofday** by clicking on the **hourofday** field name from the **Fields list**.
-4. Change the visual type to a line chart by selecting the line chart icon highlighted in the screenshot below under **Visual types**.
-5. Using the slider on x-axis, select the entire range [0,23] for **hourofday** field.
-
-![image](https://s3.amazonaws.com/us-east-1.data-analytics/labcontent/reinvent2017content-abd313/lab2/qsimage19.PNG)
-
-### Visualize the data for the month of January 2016 for all taxi types(yellow, green, fhv)
-
-1. Click on the double drop-down arrow underneath your username at the top-right corner of the page to reveal **X-axis**, **Value** and **Color** under **Field wells**.
-2. Under the **Fields list**, deselect **hourofday** by clicking on **hourofday** field name.
-3. Select **pickup_datetime** for x-axis by clicking on the **pickup_datetime** field name from **Fields list**.
-4. Select **type** for Color by clicking on the **type** field name from **Fields list.**
-
-5. Click on the field name **pickup_datetime** in top **Field Wells** bar to reveal a sub-menu.
-6. Select **Aggregate:Day** to aggregate by day.
-
-![image](img/aggregate-by-day.png)
-
-8. Using the slider on x-axis, select the entire month of January 2016 for **pickup_datetime** field.
-
-![image](img/entire-month.png)
-
-### Forecast Monthly Number of Pickups Trend
-
-1. Create a new visual by clicking on **Add** in the top left corner and choosing **Add visual**.
-
-![image](img/new-visual.png)
-
-2. Under the **Fields list**, Select **pickup_datetime** for x-axis by clicking on the **pickup_datetime** field name.
+2. Under the **Fields list**, Select your **Date** column for x-axis by clicking on the field name.
 3. Change the visual type to a line chart by selecting the line chart icon highlighted in the screenshot below under **Visual types**.
-4. Click on the field name **pickup_datetime** in top **Field Wells** bar to reveal a sub-menu.
+
+At this point, the Y-axis of the visual will be populated automatically with count of records
+that match each date individually. You can keep it that way and do forecasting for
+**count of records**, or choose another **quantity attribute** from Fields list to populate
+ Y-axis automatically and have more meaningful forecast.
+
+Before viewing the forecast, you can choose the level of aggregation you want for your **date**
+column to populate X-axis by year, month or day. 
+4. Click on the **date** field name in top **Field Wells** bar to reveal a sub-menu.
 5. Select **Aggregate:Month** to aggregate by month.
+
+You can also use the slider on the X-axis to select the range of values to appear in the graph.
 
 ![image](img/prepare-forecast.png)
 
@@ -324,6 +224,31 @@ Now that you have configured the data source and created a new field to represen
 ![image](img/forecast.png)
 
 ![image](img/end.png)
+
+**NOTE:** Make sure your Y-axis is assigned to a quantity column before proceeding.
+
+### Visualize Month over Month Quantity
+
+1. Add a new visual by duplicating the previous visual from the visual menu.
+2. Select KPI as the Visual Type (bottom left of the screen).
+3. In the field wells, click arrow in **Date** column to change the aggregation level to Month or as needed.
+
+![image](img/kpi.png)
+
+1. Now select format visual by clicking on arrow on top right corner of the KPI graph.
+2. Select **Different as percent(%)** under **comparison method** on the left.
+
+![image](img/kpi-percent.png)
+
+### Review ML Insights
+
+1. Click the ‘Insights’ menu on the left. Notice all the suggested insights QuickSight has generated based on what has been built so far!
+2. Hover over any of the insights and click the ‘+’ to add it to the dashboard.
+
+![image](img/add-insight.png)
+
+**NOTE:** You can customize the narrative by clicking on top right arrow of the visual and
+selecting **Customize narrative**.
 
 > Note: The interesting outlier in the above graph is that on Jan23rd, 2016, you see the dip in the number of taxis across all types. Doing a quick google search for that date, gets us this weather article from NBC New York
 > ![image](https://s3.amazonaws.com/us-east-1.data-analytics/labcontent/reinvent2017content-abd313/lab2/qsimage22.PNG)
